@@ -14,3 +14,8 @@ class Post(models.Model):
 	class Meta:
 		verbose_name =("Post")
 		verbose_name_plural =("Posts")
+
+class Comentario(models.Model):
+	post = models.ForeignKey(Post, on_delete= models.CASCADE)
+	contenido = models.TextField(max_length=500)
+
